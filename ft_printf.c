@@ -22,8 +22,11 @@ int ft_printf(const char *str, ...)
 
 int main()
 {
-	ft_printf("%d\n", ft_printf("med sarda [%s]\n", "this is a test"));
-	printf("%d\n", printf("med sarda [%s]\n", "this is a test"));
+	// ft_printf("%d\n", ft_printf("med sarda [%s]\n", "this is a test"));
+	// printf("%d\n", printf("med sarda [%s]\n", "this is a test"));
 	// ft_printf("med sarda [%c]\n", 'A');
-	// ft_printf("med sarda [%d]\n", -2147483648);
+	// int i = 7;
+	char *p = "test";
+	ft_printf("[%p]\n", p);
+	printf("[%p]\n", p);
 }

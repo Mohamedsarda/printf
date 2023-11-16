@@ -7,7 +7,7 @@ int ft_putnbr_base(long num, int base)
   char *base_char;
 
   count = 0;
-  base_char = "01234567890abcdef";
+  base_char = "0123456789abcdef";
   if (num < 0)
   {
     num *= -1;

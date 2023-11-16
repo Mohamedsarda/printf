@@ -11,5 +11,11 @@ int ft_action(char c, va_list ap)
 		counter = ft_putstr(va_arg(ap, char *));
 	else if (c == 'd')
 		counter = ft_putnbr_base(va_arg(ap, long), 10);
+	else if (c == 'p')
+	{
+		counter += ft_putstr("0x");
+		counter += ft_putnbr_base(va_arg(ap, long), 16);
+	}
+
 	return (counter);
 }
