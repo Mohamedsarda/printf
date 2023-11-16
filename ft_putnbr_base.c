@@ -1,28 +1,37 @@
-#include "libftprintf.h"
-#include "libft.h"
+#include "ft_printf.h"
 
-int ft_putnbr_base(long num, int base)
+
+static char *getbase(int base, int is_m)
+{
+  if (base == 16 && is_m == 0)
+    return ("0123456789abcdef");
+  else if (base == 16 && is_m == 1)
+    return ("0123456789ABCDEF");
+  else if (base == 10 && is_m == 0)
+    return ("0123456789");
+  else if (base == 2 && is_m == 0)
+    return ("01");
+  return (NULL);
+}
+
+int ft_putnbr_base(long num, int base, int is_m)
 {
   int count;
   char *base_char;
 
   count = 0;
-  base_char = "0123456789abcdef";
+  base_char = getbase(base, is_m);
   if (num < 0)
   {
     num *= -1;
     count += ft_putchar('-');
   }
-  if (num > base)
+  if (num >= base)
   {
-      count += ft_putnbr_base(num / base, base);
-      count += ft_putchar(base_char[num % base]);
+    count += ft_putnbr_base(num / base, base, is_m);
+    count += ft_putchar(base_char[num % base]);
   }
   else
     count += ft_putchar(base_char[num]);
   return (count);
 }
-// int main()
-// {
-//   ft_putnbr_base(-1498495, 10);
-// }
