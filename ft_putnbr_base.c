@@ -9,8 +9,6 @@ static char *getbase(int base, int is_m)
     return ("0123456789ABCDEF");
   else if (base == 10 && is_m == 0)
     return ("0123456789");
-  else if (base == 2 && is_m == 0)
-    return ("01");
   return (NULL);
 }
 
