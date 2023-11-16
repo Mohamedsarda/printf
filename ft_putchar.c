@@ -1,6 +1,6 @@
-#include "test.h"
+#include "libftprintf.h"
 
-int ft_putchar(char c)
+int ft_putchar(int c)
 {
 	return write(1, &c ,1);
 }

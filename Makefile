@@ -2,11 +2,11 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_putchar.c ft_putstr.c
+SRCS = ft_action.c	ft_printf.c	ft_putchar.c	ft_putnbr_base.c	ft_putstr.c
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = test.a
+NAME = libftprintf.a
 
 RM = rm -f
 
@@ -17,7 +17,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(LIBC) $(NAME) $(OBJS)
 
-%.o:%.c test.a
+%.o:%.c libftprintf.a
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
@@ -26,4 +26,4 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
+re : fclean all clean re

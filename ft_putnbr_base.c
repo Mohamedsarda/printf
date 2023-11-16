@@ -1,9 +1,8 @@
-#include "test.h"
+#include "libftprintf.h"
 #include "libft.h"
 
 int ft_putnbr_base(long num, int base)
 {
-  size_t base_len;
   int count;
   char *base_char;
 
@@ -17,15 +16,13 @@ int ft_putnbr_base(long num, int base)
   if (num > base)
   {
       count += ft_putnbr_base(num / base, base);
-      // count += ft_putnbr_base(num % base, base);
-      count += ft_putchar(num % base + '0');
+      count += ft_putchar(base_char[num % base]);
   }
   else
     count += ft_putchar(base_char[num]);
   return (count);
 }
-
-int main()
-{
-  printf("\n[%d]\n", ft_putnbr_base(2147483648, 10));
-}
+// int main()
+// {
+//   ft_putnbr_base(-1498495, 10);
+// }
