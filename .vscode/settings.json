@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.atml": "html",
+    "*.njk": "html",
+    "*.fish": "powershell",
+    "*.js": "javascript",
+    "*.mdx": "markdown",
+    ".babelrc": "json",
+    ".huskyrc": "json",
+    ".env*": "dotenv",
+    "unistd.h": "c"
+  }
+}
