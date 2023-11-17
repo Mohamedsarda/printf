@@ -30,6 +30,8 @@ int	ft_putnbr_base(long num, int base, int is_m)
 
 	count = 0;
 	base_char = getbase(base, is_m);
+	if (!base_char)
+		return (0);
 	if (num < 0)
 	{
 		num *= -1;
